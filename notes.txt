@@ -1,0 +1,45 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Roboto+Condensed" rel="stylesheet">
+
+
+Use the below for the pedigree parts of the pokemon
+font-family: 'Roboto', sans-serif;
+
+Use the below for the buttons
+font-family: 'Roboto Condensed', sans-serif;
+border-radius: '3px';
+font-size: '11px';
+text-align: 'center';
+
+Fire Arcanine  back-ground color #fd7d24
+color: #fff
+Weakness Arcanine  ground backgroundcolor #f7de3f, rock backgroundcolor #938c21,
+water backgroundcolor #4592c4
+
+Electric Magneton backgroundcolor #eed535, color #212121
+Steel Magneton backgroundcolor #9eb768, color #212121
+Weakness Magneton color #fff for all text for these buttons, ground backgroundcolor #f7de3f place an astiks on it and note that
+this type does 4 times the damage to this pokemon
+fire backgroundcolor #fd7d24 
+fighting backgroundcolor #d56723
+
+Ghost Duskell backgroundcolor #7b62a3, color #212121
+Weakness Duskell ghost font size 16px, color #fff, backgroundcolor rgb(66,66,66)
+dark backgroundcolor #f7de3f, rock backgroundcolor #938c21, water backgroundcolor #4592c4
+
+
+Use the below for <p>
+font-family: 'Montserrat', sans-serif;
+color: 'black';
+
+pedigree cards
+Duskell colors are grey  #aea9a8, offwhite #e3dddc, red eyes #dc4628
+Arcanine colors are orange #f28d02, tan #f8ba00, black #020202
+Magneton colors are light blue #729abf, black #020202, red #dc4628
+
+Sources:
+
+fonts
+https://fonts.google.com/?selection.family=Montserrat|Roboto|Roboto+Condensed
+
+https://www.hongkiat.com/blog/creative-css-animations/
+
