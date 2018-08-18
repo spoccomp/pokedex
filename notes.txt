@@ -36,10 +36,27 @@ Duskell colors are grey  #aea9a8, offwhite #e3dddc, red eyes #dc4628
 Arcanine colors are orange #f28d02, tan #f8ba00, black #020202
 Magneton colors are light blue #729abf, black #020202, red #dc4628
 
+My SPECS
+I am RICHARDO-AI
+I just started my collection of Pokemon, I am a novice tainer. On the left I am in human form, on the right
+is when I morph into my own Pokemon. Here is a list of my stats when I am Pokemon trainer.
+
+Height: 800' Weight: 21100lbs Gender: male
+HP: 399 Type: Human
+Attack: 99 Defense: 99
+Special Attack: 90
+Special Defense: 90
+Abilities: Intelligence, use of technology
+
+
+About:
+
+
 Sources:
 
 fonts
 https://fonts.google.com/?selection.family=Montserrat|Roboto|Roboto+Condensed
 
 https://www.hongkiat.com/blog/creative-css-animations/
+https://reddit  for idea of human pokemon attributes
 
