@@ -53,10 +53,11 @@ About:
 
 
 Sources:
-
+W3Schools, MDN, Material website, stackoverflow, and google
+My Notes
 fonts
 https://fonts.google.com/?selection.family=Montserrat|Roboto|Roboto+Condensed
-
+pokemon fonts from fizel
 https://www.hongkiat.com/blog/creative-css-animations/
 https://reddit  for idea of human pokemon attributes
 
