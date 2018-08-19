@@ -5,176 +5,97 @@
 //Duskell
 //http://fizal.me/pokeapi/api/355.json
 
-function getThePokemans(response) {
-    axios.get(`http://fizal.me/pokeapi/api/${response}.json`)
-        .then(function (res) {
-            let bing = res.data;
-            console.log(bing);
-            console.log(bing.name);
-            console.log(`ID: ${bing.id}`);
-            if(bing.held_items[0] === undefined){
-                console.log(`Item: none`);
-            }else{
-            console.log(`Item: ${bing.held_items[0].item.name}`);
-            }
-            let abil = bing.abilities.length;
-            let randAbil = Math.floor(Math.random() * abil);
-            console.log(`Ability: ${bing.abilities[randAbil].ability.name}`);
-            console.log(`Height: ${bing.height}`);
-
-            
-            //four moves only. Call new axios for moves and accruacy, power and priority
-            let ctr = bing.moves.length;
-            for (let i = 0; i < 4; i++) {
-                let randMoves = Math.floor(Math.random() * ctr);
-                axios.get(bing.moves[randMoves].move.url)
-                    .then(function (resBonus) {
-                        let bong = resBonus.data;
-                        // console.log(bong);
-                        console.log(
-                            `Moves${i}: ${bing.moves[randMoves].move.name}
-                Accruacy: ${bong.accuracy}
-                Power: ${bong.power}
-                Priority: ${bong.priority}`);
-                    }).catch(function (response) {
-                        console.error(response);
-                    })
-            }
-
-            console.log(`Type: ${bing.types[0].type.name}`);
-            console.log(`Weight: ${bing.weight}`);
-            for (let k = 0; k < bing.stats.length; k++) {
-                console.log(`${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `);
-            }
-            console.log(`Image: ${bing.sprites.front_shiny}`)
-        }).catch(function (response) {
-            console.error(response);
-        })
-}
-
-let pokeman = prompt("Catch a pokemon, pick a number between 1 and 807: ");
-getThePokemans(pokeman);
-//Arcanine
-// let arcanine = axios.get("http://fizal.me/pokeapi/api/59.json")
-//     .then(function (res) {
-//         let bing = res.data;
-//         console.log(bing);
-//         console.log(bing.name);
-//         console.log(`ID: ${bing.id}`);
-//         console.log(`Item: ${bing.held_items[0].item.name}`);
-//         let abil = bing.abilities.length;
-//             let randAbil = Math.floor(Math.random()* abil);
-//         console.log(`Ability: ${bing.abilities[randAbil].ability.name}`);
-//         console.log(`Height: ${bing.height}`);
-//         let ctr = bing.moves.length;
+let div = document.querySelector(".mainContainer");
 
 
+// }
+// let answer = prompt("Catch a pokemon, pick a number between 1 and 807:  ");
+// let nameAns = prompt("Give you Pokemon a name: ");
+// getThePokemans(nameAns,answer);
+//let arcanine = new Pokeman({...obj});
+//arcanine = {...obj};
+//let rich = new Trainer();
+//rich.addPokemon(arcanine);
 
-//         for(let i=0;i<4;i++){
-//             let randMoves = Math.floor(Math.random()*ctr);   
-//              axios.get(bing.moves[randMoves].move.url)
-//             .then(function (resBonus) {
-//                 let bong = resBonus.data;
-//                 // console.log(bong);
-//                 console.log(
-//                 `Moves${i}: ${bing.moves[randMoves].move.name}
-//                 Accruacy: ${bong.accuracy}
-//                 Power: ${bong.power}
-//                 Priority: ${bong.priority}`);
-//             }).catch(function (response) {
-//                 console.error(response);
-//         })
-//         }
+// let answer = prompt("Catch a pokemon, pick a number between 1 and 807: ");
+// getThePokemans(answer);
+//let ids = parseInt(answer);
+// let ask = prompt("Want to add this bad boy to your pokedex? y:n").toLowerCase();
+// if (ask === 'y'){
+//     let newMonster = answer;
+//     newMonster = new Pokeman(ids);
+// }
 
-//         console.log(`Type: ${bing.types[0].type.name}`);
-//         console.log(`Weight: ${bing.weight}`);
-//         for(let k=0;k<bing.stats.length;k++){
-//             console.log(`${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `);
-//         }
-//     }).catch(function (response) {
-//         console.error(response);
-// })
-
-//Magneton
-// let magneton = axios.get("http://fizal.me/pokeapi/api/82.json")
-// .then(function (res) {
-//         let bing = res.data;
-//         console.log(bing);
-
-
-//     }).catch(function (response) {
-//         console.error(response);
-// })
-//Duskell
-// let duskell = axios.get("http://fizal.me/pokeapi/api/355.json")
-// .then(function (res) {
-//         let bing = res.data;
-//         console.log(bing);
-
-
-//     }).catch(function (response) {
-//         console.error(response);
-// })
-
-class Pokeman {
-    constructor(name,id,abilities,height,type,weight,speed, 
-        specialDefense,specialAttack,defense,attack,hp,imageSprite,
-        move1,move2,move3,move4) {
-        this.name = name;
-        this.id = id;
-        this.abilities =  abilities;
-        this.height = height;
-        this.type = type;
-        this.weight = weight;
-        this.speed = speed;
-        this.specialDefense = specialDefense;
-        this.specialAttack = specialAttack;
-        this.defense = defense;
-        this.attack = attack;
-        this.hp = hp;
-        this.imageSprite = imageSprite;
-        this.move1 = move1;
-        this.move2 = move2;
-        this.move3 = move3;
-        this.move4 = move4;
-    }
-
-}
 class Trainer {
-    constuctor(name,
-        height, weight, gender, hp, type, attack, defense,
-        specialAttack, specialDefense, ability1, ability2,
-        move1, move2, move3, move4, pokemanNum) {
-        this.name = name;
+    // constuctor(trainername = "Richardo-AI", height = 800, weight = 21100, gender = "male",
+    //     hp = 399, type = "human", attack = 99, defense = 99, specialAttack = 90,
+    //     specialDefense = 90, ability1 = "intelligence", ability2 = "use of technology") {
+    constructor(trainername = "Richardo-AI", height = 800, weight = 21100, gender = "male", hp = 399, type = "human") {
+        this.trainername = trainername;
         this.height = height;
         this.weight = weight;
         this.gender = gender;
         this.hp = hp;
         this.type = type;
+        // this.attack = attack;
+        // this.defense = defense;
+        // this.specialAttack = specialAttack;
+        // this.specialDefense = specialDefense;
+        // this.ability1 = ability1;
+        // this.ability2 = ability2;
+        //this.pokeman = pokeman;
+        this.trainerArray = []; //stores pokedex for the trainer
+        //this.pokemanCollection = [];
+    }
+    addPokemon(pk) {
+        this.trainerArray.push(pk);
+    }
+    trainerStats() {
+        //console.log(`${this.trainerStats}`);
+        return `Name:${this.trainername}
+                Height:${this.height}
+                Wieght:${this.type}`;
+    }
+
+    getPokemon() {
+        // return this.trainerArray.find((element)=>{
+        //     return element.name === name;
+       //console.log( this.trainerArray);
+       return this.trainerArray;
+
+    }
+
+}
+class Pokeman {
+    constructor(id, name, type, item, ability,
+        height, weight, speed, attack, hp, defense,
+        specialAttack, specialDefense, moves,
+        image) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.item = item;
+        this.ability = ability;
+        this.height = height;
+        this.weight = weight;
+        this.speed = speed;
         this.attack = attack;
+        this.hp = hp;
         this.defense = defense;
         this.specialAttack = specialAttack;
         this.specialDefense = specialDefense;
-        this.ability1 = ability1;
-        this.ability2 = ability2;
-        this.move1 = move1;
-        this.move2 = move2;
-        this.move3 = move3;
-        this.move4 = move4;
-        this.pokeman = pokemanNum;
-        this.trainerArray = [];
+        this.moves = moves; //contains move name and accuracy, power, priority
+        this.image = image;
+
     }
-    putPokemanInCage(poke){
-        this.trainerArray.push(poke);
-    }
-    namedAll(){
-        return this.trainerArray;
-    }
-    // get named (name){
-    //     return name;
-    // }
 }
 
+
+
+
+
+
+let rich = new Trainer();
 ////**********************TODO */
 //create web page
 //create theme JS web page for type of each pokemon
@@ -184,3 +105,452 @@ class Trainer {
 //animation for my ideas
 //behavioral JS such as buttons, hover, clicks
 //try to get the sprites on the webAPI axios pull to the webpage in cards
+
+let obj = {};
+
+
+
+
+//Arcanine
+
+// function getThePokemans(pokemonName, response) {
+//     axios.get(`http://fizal.me/pokeapi/api/${response}.json`)
+//         .then(function (res) {
+    
+
+    axios.get(`http://fizal.me/pokeapi/api/59.json`)
+.then(function (res) {
+            let bing = res.data;
+            // console.log(bing);
+
+            function getId() {
+                console.log(`ID: ${bing.id}`);
+                obj.id = bing.id;
+                return bing.id;
+            }
+
+            function getName() {
+                console.log(bing.name);
+                obj.name = bing.name;
+                return bing.name;
+            }
+
+            function getType() {
+                console.log(`Type: ${bing.types[0].type.name}`);
+                obj.type = bing.types[0].type.name;
+                return bing.types[0].type.name;
+            }
+
+
+            function getItem() {
+                let stuff = bing.held_items[0];
+                if (stuff === undefined) {
+                    console.log(`Item: none`);
+                    obj.item = "None";
+                    return `None`;
+                } else {
+                    console.log(`Item: ${bing.held_items[0].item.name}`);
+                    obj.item = `${bing.held_items[0].item.name}`;
+                    return `${bing.held_items[0].item.name}`;
+                }
+            }
+
+
+            function getAbility() {
+                abil = bing.abilities.length;
+                let randAbil = Math.floor(Math.random() * abil);
+                console.log(`Ability: ${bing.abilities[randAbil].ability.name}`);
+                obj.ability = `${bing.abilities[randAbil].ability.name}`;
+                return `${bing.abilities[randAbil].ability.name}`;
+            }
+
+
+            function getHeight() {
+                console.log(`Height: ${bing.height}`);
+                obj.height = bing.height;
+                return bing.height;
+            }
+
+
+            function getWeight() {
+                console.log(`Weight: ${bing.weight}`);
+                obj.weight = bing.weight;
+                return bing.weight;
+            }
+
+
+            function getStats() {
+                for (let k = 0; k < bing.stats.length; k++) {
+                    console.log(`${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `);
+
+
+                    //return `${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `;
+                }
+                obj.speed = `${bing.stats[0].stat.name}: ${bing.stats[0].base_stat} `;
+                obj.hp = `${bing.stats[5].base_stat}`;
+                obj.specialDefense = `${bing.stats[1].stat.name}: ${bing.stats[1].base_stat} `;
+                obj.specialAttack = `${bing.stats[2].stat.name}: ${bing.stats[2].base_stat} `;
+                obj.defense = `${bing.stats[3].stat.name}: ${bing.stats[3].base_stat} `;
+                obj.attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
+
+            }
+            //four moves only. Call new axios for moves and accruacy, power and priority
+
+
+            function getMoves() {
+                makingMoves = bing.moves;
+                let move = [];
+                let ctr = makingMoves.length;
+                for (let i = 0; i < 4; i++) {
+                    let randMoves = Math.floor(Math.random() * ctr);
+                    axios.get(makingMoves[randMoves].move.url)
+                        .then(function (resBonus) {
+                            let bong = resBonus.data;
+                            //console.log(bong);
+                            console.log(
+                                `Moves${i}: ${makingMoves[randMoves].move.name}
+                                 Accruacy: ${bong.accuracy}
+                                 Power: ${bong.power}
+                                 Priority: ${bong.priority}`);
+
+                            move.push(`Moves${i}: ${makingMoves[randMoves].move.name}
+                                                 Accruacy: ${bong.accuracy}
+                                                 Power: ${bong.power}
+                                                 Priority: ${bong.priority}`);
+
+                            return `Moves${i}: ${makingMoves[randMoves].move.name}
+                                 Accruacy: ${bong.accuracy}
+                                 Power: ${bong.power}
+                                 Priority: ${bong.priority}`;
+
+
+                        }).catch(function (response) {
+                            console.error(response);
+                        })
+                }
+                obj.moves = move;
+
+            }
+
+            function getImage() {
+                console.log(`Image: ${bing.sprites.front_shiny}`);
+                obj.image = `${bing.sprites.front_shiny}`
+                return `${bing.sprites.front_shiny}`;
+            }
+            
+                arcanine = new Pokeman(
+                getName(), getId(), getType(), getItem(),
+                getAbility(), getHeight(), getWeight(),
+                getStats(), getMoves(), getImage());
+
+                let divcard1 = document.getElementById("divcd1");
+                let divInfo = document.createElement("div");
+                divInfo.setAttribute("class", "center");
+                divInfo.innerHTML = `
+                <span class="white-text">Pokémon</span>
+                <span class="namepoke1">${getName()}</span>
+                <img class="sizeImag1" src="${bing.sprites.front_shiny}" alt="Arcanine" width="100">
+                <p class="poketext white-text">Arcanine is know for its high speed.
+                It is said to be capable of running over 6,200 miles in a single day and
+                night.  The fire that blazes widly within this Pokémon's body is its source of power.</p>
+                </div>`;
+                divcard1.appendChild(divInfo);
+
+        }).catch(function (response) {
+            console.error(response);
+        })
+        
+// }
+
+//Magneton
+axios.get(`http://fizal.me/pokeapi/api/82.json`)
+    .then(function (res) {
+        let bing = res.data;
+        // console.log(bing);
+
+        function getId() {
+            console.log(`ID: ${bing.id}`);
+            obj.id = bing.id;
+            return bing.id;
+        }
+
+        function getName() {
+            console.log(bing.name);
+            obj.name = bing.name;
+            return bing.name;
+        }
+
+        function getType() {
+            console.log(`Type: ${bing.types[0].type.name}`);
+            obj.type = bing.types[0].type.name;
+            return bing.types[0].type.name;
+        }
+
+
+        function getItem() {
+            let stuff = bing.held_items[0];
+            if (stuff === undefined) {
+                console.log(`Item: none`);
+                obj.item = "None";
+                return `None`;
+            } else {
+                console.log(`Item: ${bing.held_items[0].item.name}`);
+                obj.item = `${bing.held_items[0].item.name}`;
+                return `${bing.held_items[0].item.name}`;
+            }
+        }
+
+
+        function getAbility() {
+            abil = bing.abilities.length;
+            let randAbil = Math.floor(Math.random() * abil);
+            console.log(`Ability: ${bing.abilities[randAbil].ability.name}`);
+            obj.ability = `${bing.abilities[randAbil].ability.name}`;
+            return `${bing.abilities[randAbil].ability.name}`;
+        }
+
+
+        function getHeight() {
+            console.log(`Height: ${bing.height}`);
+            obj.height = bing.height;
+            return bing.height;
+        }
+
+
+        function getWeight() {
+            console.log(`Weight: ${bing.weight}`);
+            obj.weight = bing.weight;
+            return bing.weight;
+        }
+
+
+        function getStats() {
+            for (let k = 0; k < bing.stats.length; k++) {
+                console.log(`${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `);
+
+
+                //return `${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `;
+            }
+            obj.speed = `${bing.stats[0].stat.name}: ${bing.stats[0].base_stat} `;
+            obj.hp = `${bing.stats[5].base_stat}`;
+            obj.specialDefense = `${bing.stats[1].stat.name}: ${bing.stats[1].base_stat} `;
+            obj.specialAttack = `${bing.stats[2].stat.name}: ${bing.stats[2].base_stat} `;
+            obj.defense = `${bing.stats[3].stat.name}: ${bing.stats[3].base_stat} `;
+            obj.attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
+
+        }
+        //four moves only. Call new axios for moves and accruacy, power and priority
+
+
+        function getMoves() {
+            makingMoves = bing.moves;
+            let move = [];
+            let ctr = makingMoves.length;
+            for (let i = 0; i < 4; i++) {
+                let randMoves = Math.floor(Math.random() * ctr);
+                axios.get(makingMoves[randMoves].move.url)
+                    .then(function (resBonus) {
+                        let bong = resBonus.data;
+                        //console.log(bong);
+                        console.log(
+                            `Moves${i}: ${makingMoves[randMoves].move.name}
+                                 Accruacy: ${bong.accuracy}
+                                 Power: ${bong.power}
+                                 Priority: ${bong.priority}`);
+
+                        move.push(`Moves${i}: ${makingMoves[randMoves].move.name}
+                                                 Accruacy: ${bong.accuracy}
+                                                 Power: ${bong.power}
+                                                 Priority: ${bong.priority}`);
+
+                        return `Moves${i}: ${makingMoves[randMoves].move.name}
+                                 Accruacy: ${bong.accuracy}
+                                 Power: ${bong.power}
+                                 Priority: ${bong.priority}`;
+
+
+                    }).catch(function (response) {
+                        console.error(response);
+                    })
+            }
+            obj.moves = move;
+
+        }
+
+        function getImage() {
+            console.log(`Image: ${bing.sprites.front_shiny}`);
+            obj.image = `${bing.sprites.front_shiny}`
+            return `${bing.sprites.front_shiny}`;
+        }
+            magneton = new Pokeman(
+            getName(), getId(), getType(), getItem(),
+            getAbility(), getHeight(), getWeight(),
+            getStats(), getMoves(), getImage());
+
+
+            let divcard2 = document.getElementById("divcd2");
+                let divInfo = document.createElement("div");
+                divInfo.setAttribute("class", "center");
+                divInfo.innerHTML = `
+                <span class="white-text">Pokémon</span>
+                <span class="namepoke1">${getName()}</span>
+                <img class="sizeImag1" src="${bing.sprites.front_shiny}" alt="Arcanine" width="100">
+                <p class="poketext white-text">Magneton emits a powerful magnetic force that is fatal to mechanical
+                devices.  As a result, large cities sound sirens to warn citizens of large
+                scale out breaks of this type of pokémon.</p>
+                </div>`;
+                divcard2.appendChild(divInfo);
+    }).catch(function (response) {
+        console.error(response);
+    })
+
+//Duskell
+axios.get(`http://fizal.me/pokeapi/api/355.json`)
+    .then(function (res) {
+        let bing = res.data;
+        // console.log(bing);
+
+        function getId() {
+            console.log(`ID: ${bing.id}`);
+            obj.id = bing.id;
+            return bing.id;
+        }
+
+        function getName() {
+            console.log(bing.name);
+            obj.name = bing.name;
+            return bing.name;
+        }
+
+        function getType() {
+            console.log(`Type: ${bing.types[0].type.name}`);
+            obj.type = bing.types[0].type.name;
+            return bing.types[0].type.name;
+        }
+
+
+        function getItem() {
+            let stuff = bing.held_items[0];
+            if (stuff === undefined) {
+                console.log(`Item: none`);
+                obj.item = "None";
+                return `None`;
+            } else {
+                console.log(`Item: ${bing.held_items[0].item.name}`);
+                obj.item = `${bing.held_items[0].item.name}`;
+                return `${bing.held_items[0].item.name}`;
+            }
+        }
+
+
+        function getAbility() {
+            abil = bing.abilities.length;
+            let randAbil = Math.floor(Math.random() * abil);
+            console.log(`Ability: ${bing.abilities[randAbil].ability.name}`);
+            obj.ability = `${bing.abilities[randAbil].ability.name}`;
+            return `${bing.abilities[randAbil].ability.name}`;
+        }
+
+
+        function getHeight() {
+            console.log(`Height: ${bing.height}`);
+            obj.height = bing.height;
+            return bing.height;
+        }
+
+
+        function getWeight() {
+            console.log(`Weight: ${bing.weight}`);
+            obj.weight = bing.weight;
+            return bing.weight;
+        }
+
+
+        function getStats() {
+            for (let k = 0; k < bing.stats.length; k++) {
+                console.log(`${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `);
+
+
+                //return `${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `;
+            }
+            obj.speed = `${bing.stats[0].stat.name}: ${bing.stats[0].base_stat} `;
+            obj.hp = `${bing.stats[5].base_stat}`;
+            obj.specialDefense = `${bing.stats[1].stat.name}: ${bing.stats[1].base_stat} `;
+            obj.specialAttack = `${bing.stats[2].stat.name}: ${bing.stats[2].base_stat} `;
+            obj.defense = `${bing.stats[3].stat.name}: ${bing.stats[3].base_stat} `;
+            obj.attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
+
+        }
+        //four moves only. Call new axios for moves and accruacy, power and priority
+
+
+        function getMoves() {
+            makingMoves = bing.moves;
+            let move = [];
+            let ctr = makingMoves.length;
+            for (let i = 0; i < 4; i++) {
+                let randMoves = Math.floor(Math.random() * ctr);
+                axios.get(makingMoves[randMoves].move.url)
+                    .then(function (resBonus) {
+                        let bong = resBonus.data;
+                        //console.log(bong);
+                        console.log(
+                            `Moves${i}: ${makingMoves[randMoves].move.name}
+                                 Accruacy: ${bong.accuracy}
+                                 Power: ${bong.power}
+                                 Priority: ${bong.priority}`);
+
+                        move.push(`Moves${i}: ${makingMoves[randMoves].move.name}
+                                                 Accruacy: ${bong.accuracy}
+                                                 Power: ${bong.power}
+                                                 Priority: ${bong.priority}`);
+
+                        return `Moves${i}: ${makingMoves[randMoves].move.name}
+                                 Accruacy: ${bong.accuracy}
+                                 Power: ${bong.power}
+                                 Priority: ${bong.priority}`;
+
+
+                    }).catch(function (response) {
+                        console.error(response);
+                    })
+            }
+            obj.moves = move;
+
+        }
+
+        function getImage() {
+            console.log(`Image: ${bing.sprites.front_shiny}`);
+            obj.image = `${bing.sprites.front_shiny}`
+            return `${bing.sprites.front_shiny}`;
+        }
+            duskell = new Pokeman(
+            getName(), getId(), getType(), getItem(),
+            getAbility(), getHeight(), getWeight(),
+            getStats(), getMoves(), getImage());
+
+
+            let divcard3 = document.getElementById("divcd3");
+            let divInfo = document.createElement("div");
+            divInfo.setAttribute("class", "center");
+            divInfo.innerHTML = `
+            <span class="white-text">Pokémon</span>
+            <span class="namepoke1">${getName()}</span>
+            <img class="sizeImag1" src="${bing.sprites.front_shiny}" alt="Arcanine" width="100">
+            <p class="poketext white-text">Duskell can pass through any wall no matter
+            how thick it may be. Once this pokémon chooses a target, it will doggedly
+            pursue the intended victim until the break of dawn.</p>
+            </div>`;
+            divcard3.appendChild(divInfo);
+    }).catch(function (response) {
+        console.error(response);
+    })
+// rich.addPokemon(arcanine);
+// rich.addPokemon(magneton);
+// rich.addPokemon(duskell);
+
+// let answer = prompt("Catch a pokemon, pick a number between 1 and 807:  ");
+// let nameAns = prompt("Give you Pokemon a name: ");
+// getThePokemans(nameAns, answer);
+//    div.innerHTML = arcanine;
+//    document.body.appendChild(div);
