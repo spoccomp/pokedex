@@ -32,6 +32,22 @@ nav ul{
   .imgGrass {
       width:600px;
   }
+  .imgPokemon{
+      width:175px;
+  }
+  .imgPokemon1{
+    width:135px;
+    height:100px;
+    margin-top: 40px;
+    margin-left: 65%;
+}
+ .glass{
+     background-image: url("/Users/macuser/Documents/NYCode+DesignAcademy/projects/personalPokedex/imagestuff/grassfield.jpg");
+     background-repeat: no-repeat;
+     width:600px;
+     /* height:400px; */
+     /* background-size: cover; */
+} 
 .imageLogo{
     width: 250px;
     height: 92px;
@@ -69,4 +85,12 @@ a.aboutp:visted {
 a.aboutp:hover {
     /* hover over the link */
     color:hotpink;
+}
+.blink{
+    animation: blinkThis 3.5s infinite;
+}
+@keyframes blinkThis{
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
 }
