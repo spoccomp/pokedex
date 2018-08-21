@@ -43,11 +43,11 @@
                         </li>
                         <li>
                             <button id="myBtn">
-                                    <a href="#myList1">Pokémon Trainer List</a>
+                                <a href="#myList1">Pokémon Trainer List</a>
                             </button>
                         </li>
                         <li>
-                            <a href="#">Pokémon Search</a>
+                            <a href="#newTrainerAddPokemon">Pokémon Search</a>
                         </li>
                     </ul>
                 </div>
@@ -134,8 +134,8 @@
             concept was thought of in 1996 and Pokémon were originally called Pocket Monsters, Red and Green.
         </p>
         <p class="teal-text namepoke1 center">The franchise has spanned all boaders, and from cards to computers, hand helds, and now played on the phone. There
-            are many Pokémon to catch, about 800 in total with new monsters added with every update. The term "Gotta Catch 'Em All" is a an
-            English slogan that was coined in the United States.
+            are many Pokémon to catch, about 800 in total with new monsters added with every update. The term "Gotta Catch
+            'Em All" is a an English slogan that was coined in the United States.
         </p>
         <p class="teal-text namepoke1 center"> By the way this is Pokémon text or what we like to call font!</p>
         <p class="teal-text namepoke1 center">If you want an in depth Pokémon history please go to Wikipedia.</p>
@@ -147,13 +147,40 @@
         </div>
     </section>
     <!-- More detailed list of my pokemans -->
-    
+
     <section>
-      <div id="myList1"></div> 
-      <div id="movesbaby"></div>
-      <div class="card-action">
-            <button id="broo">Broo hahaha<br></button>
-     </div>
+        <div id="myList1"></div>
+        <div id="movesbaby"></div>
+        <div class="card-action">
+            <button id="broo">Broo hahaha
+                <br>
+            </button>
+        </div>
+    </section>
+    <section id="newTrainerAddPokemon">
+        <h3 class="center teal-text">Hello future trainer!</h3>
+        <div class="wrapper center">
+        <form id="searchBaby">
+            <label id="nameLable" for="inputTrainerName">trainer name:</label>
+                <input id="inputTrainerName" type="text" maxlength="15">
+            <label id="numLable" for="inputNumber">Search Pokemon, pick a number between 1 and 807:</label>
+                <input id="inputNumber" type="number" maxlength="3">
+            <label id="heightLable" for="inputheight">height:</label>
+                <input id="inputheight" type="number" maxlength="3">
+            <label id="weightLable" for="inputweight">weight:</label>
+                <input id="inputweight" type="number" maxlength="3">
+            <label id="genderLable" for="inputgender">gender:</label>
+                <input id="inputgender" type="text" maxlength="5">
+            <label id="hplabel" for="inputhp">hp:</label>
+                <input id="inputhp" type="number" maxlength="3">
+            <label id="typelabel" for="inputtype">type:</label>
+                <input id="inputtype" type="text" maxlength="8">
+                <!-- <button onclick="getinfor()">GetInfor</button> -->
+                <input id="getsIt" type="button" value="Search">
+            <div id="getSearchPoke"></div>
+        </form>
+        </div>
+
     </section>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
