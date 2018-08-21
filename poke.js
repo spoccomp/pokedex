@@ -51,7 +51,6 @@ class Trainer {
         this.trainerArray.push(pk);
     }
     trainerStats() {
-        //console.log(`${this.trainerStats}`);
         return `Name:${this.trainername}
                 Height:${this.height}
                 Wieght:${this.type}`;
