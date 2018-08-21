@@ -44,9 +44,7 @@ nav ul {
 .glass {
   background-image: url("/Users/macuser/Documents/NYCode+DesignAcademy/projects/personalPokedex/imagestuff/grassfield.jpg");
   background-repeat: no-repeat;
-  width: 600px;
-  /* height:400px; */
-  /* background-size: cover; */ }
+  width: 600px; }
 
 .imageLogo {
   width: 250px;
