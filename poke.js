@@ -287,7 +287,7 @@ function getThePokemans(trainername, response) {
             // specialAttack, specialDefense, moves,
             // image) 
 
-            let nameOfTrainer = trainername;
+            //let nameOfTrainer = trainername;
 
             nameofPOke = new Pokeman(getId(),
                 getName(), getType(), getItem(),
@@ -300,7 +300,9 @@ function getThePokemans(trainername, response) {
             let divInfo = document.createElement("div");
             divInfo.setAttribute("class", "center");
             divInfo.innerHTML = `
-            <h2 class="center teal">${nameOfTrainer}</h2>
+            <h2 class="center teal">Trainer Name: ${trainername.trainername}</h2>
+            <h4 class="center teal">Height: ${trainername.height}\u00A0\u00A0\ Weight: ${trainername.weight}\u00A0\u00A0\ Gender: ${trainername.gender}\u00A0\u00A0\ 
+            HP: ${trainername.hp}\u00A0\u00A0\ Type: ${trainername.type}</h4>
             <h3 class="header myListName">${getName()}</h3>
             <div class="card horizontal">
             <div class="card-image">
@@ -338,9 +340,10 @@ function getThePokemans(trainername, response) {
             // </div>`;
             divcardSearch.appendChild(divInfo);
             
-            console.log(nameOfTrainer);//name does get passed and printed to console.
-            nameOfTrainer.addPokemon(nameofPOke);
-
+            console.log( trainername);//name does get passed and printed to console.
+            //nameOfTrainer.addPokemon(nameofPOke);
+            trainername.addPokemon(nameofPOke);
+            
         }).catch(function (response) {
             console.error(response);
         })
@@ -886,6 +889,8 @@ function gettheType(){
 }
 
 
+
+
 function gettheName(){
     let getTrainName = document.getElementById('inputTrainerName').value;
     getTrainName = new Trainer(getTrainName,gettheHeight(),gettheWeight(),gettheGender(),gettheHp(),gettheType());
@@ -898,4 +903,5 @@ function gettheName(){
 document.getElementById("getsIt").addEventListener("click", searchThem);
 function searchThem(){
    getThePokemans(gettheName(), gettheID());   
+   
 }
