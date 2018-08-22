@@ -1,0 +1,99 @@
+
+#mybTn{
+    background-color: teal !important;
+}
+
+.myImageSize{
+    margin-top: 40px;
+    height: 150px;
+    width: 175px;
+    transform: rotate(270deg)
+}
+.imgGodz{
+    margin-top: 25px;
+    height: 150px;
+    width: 175px;
+}
+.myheader{
+    height: 300px;
+}
+.pHeader{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav ul{
+    transform: translateX(30%);
+    /* webkit-transform: translateX(-32%); */
+  }
+  .h2Stuff{
+      text-align: center;
+      margin-top: 65px;
+      margin-right: 50px;
+      font-family: pokemon;
+  }
+  .imgGrass {
+      width:600px;
+  }
+  .imgPokemon{
+      width:175px;
+  }
+  .imgPokemon1{
+    width:135px;
+    height:100px;
+    margin-top: 40px;
+    margin-left: 65%;
+}
+ .glass{
+     background-image: url("/Users/macuser/Documents/NYCode+DesignAcademy/projects/personalPokedex/imagestuff/grassfield.jpg");
+     background-repeat: no-repeat;
+     width:600px;
+     
+} 
+.imageLogo{
+    width: 250px;
+    height: 92px;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 15px;
+    
+}
+.imageHball{
+    width:130px;
+    height:100px;
+
+}
+@font-face{
+    font-family: pokemon;
+    src: url("/Users/macuser/Documents/NYCode+DesignAcademy/projects/personalPokedex/pokemonFont/pokemon-solid/dahot.Pokemon Solid.ttf");
+}
+$pokemonfont:pokemon;
+.namepoke1{
+    font-family:pokemon;
+    font-size: 18px;  
+}
+.ptext{
+    font-family: pokemon;
+}
+a.aboutp:link {
+    /* not visited */
+    color:blue;
+}
+a.aboutp:visted {
+    /* visited */
+    color:red;
+}
+a.aboutp:hover {
+    /* hover over the link */
+    color:hotpink;
+}
+.blink{
+    animation: blinkThis 3.5s infinite;
+}
+@keyframes blinkThis{
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
