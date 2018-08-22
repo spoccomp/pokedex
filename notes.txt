@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Roboto+Condensed" rel="stylesheet">
 
-
+Try to incorporate ideas below into the webpage
 Use the below for the pedigree parts of the pokemon
 font-family: 'Roboto', sans-serif;
 
