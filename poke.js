@@ -823,7 +823,20 @@ function functionThis() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+let goHome1 = document.querySelector("#goHome1");
+goHome1.addEventListener("click", functionThis);
 
+function functionThis() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+let goHome2 = document.querySelector("#goHome2");
+goHome2.addEventListener("click", functionThis);
+
+function functionThis() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 document.getElementById("myBtn").addEventListener("click", displayPokeList);
 
 function displayPokeList() {
