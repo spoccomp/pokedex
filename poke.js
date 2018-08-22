@@ -63,7 +63,7 @@ class Trainer {
                 <div class="card-content myListContent">
                     <p>ID: ${element.id}\u00A0\u00A0\u00A0\u00A0\ Held Item: ${element.item }\u00A0\u00A0\u00A0\u00A0\  Type: ${element.type}</p>
                     <p>Height: ${element.height  }\u00A0\u00A0\u00A0\u00A0\ Weight: ${element.weight}\u00A0\u00A0\u00A0\u00A0\ Ability: ${element.ability}</p>
-                    <p>Attack: ${element.attack  }\u00A0\u00A0\u00A0\u00A0\ Defense: ${element.defense  } </p>
+                    <p>Attack: ${element.attack  }\u00A0\u00A0\u00A0\u00A0\ Defense: ${element.defense}\u00A0\u00A0\u00A0\u00A0\ Speed: ${element.speed} </p>
                     <p>Special Attack: ${element.specialAttack  }\u00A0\u00A0\u00A0\u00A0\ Special Defense: ${element.specialDefense}</p>
                     <h3>Making Moves with Accuracy, Power and Priority</h3>
                     <p>${this.trainerArray[0].moves[0]}</p>
@@ -286,6 +286,9 @@ function getThePokemans(trainername, response) {
             // height, weight, speed, attack, hp, defense,
             // specialAttack, specialDefense, moves,
             // image) 
+
+            let nameOfTrainer = trainername;
+
             nameofPOke = new Pokeman(getId(),
                 getName(), getType(), getItem(),
                 getAbility(), getHeight(), getWeight(),
@@ -297,7 +300,7 @@ function getThePokemans(trainername, response) {
             let divInfo = document.createElement("div");
             divInfo.setAttribute("class", "center");
             divInfo.innerHTML = `
-            <h2 class="center teal">${trainername}</h2>
+            <h2 class="center teal">${nameOfTrainer}</h2>
             <h3 class="header myListName">${getName()}</h3>
             <div class="card horizontal">
             <div class="card-image">
@@ -334,7 +337,7 @@ function getThePokemans(trainername, response) {
 
             // </div>`;
             divcardSearch.appendChild(divInfo);
-            let nameOfTrainer = trainername;
+            
             console.log(nameOfTrainer);//name does get passed and printed to console.
             nameOfTrainer.addPokemon(nameofPOke);
 
@@ -839,7 +842,7 @@ function functionThisToo() {
 
 
 
-
+//below gets data to build a new trainer and pokemans collections
 function gettheID(){
     let getPokID = document.getElementById('inputNumber').value;
     let numId = parseInt(getPokID);

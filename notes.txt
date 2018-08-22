@@ -50,11 +50,17 @@ Abilities: Intelligence, use of technology
 
 
 About:
-
+Pokémon is a Japanese game that is international. It was created by Satoshi Tajiri and Ken Sugimori. The original
+concept was thought of in 1996 and Pokémon were originally called Pocket Monsters, Red and Green.
+The franchise has spanned all boaders, and from cards to computers, hand helds, and now played on the phone. There
+are many Pokémon to catch, about 800 in total with new monsters added with every update. The term "Gotta Catch
+'Em All" is a an English slogan that was coined in the United States.
+By the way this is Pokémon text or what we like to call font!
+If you want an in depth Pokémon history please go to Wikipedia.
 
 Sources:
 W3Schools, MDN, Material website, stackoverflow, and google
-My Notes
+My Notes and of course TAs, Professor
 fonts
 https://fonts.google.com/?selection.family=Montserrat|Roboto|Roboto+Condensed
 pokemon fonts from fizel
