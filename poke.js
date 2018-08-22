@@ -5,7 +5,7 @@
 //Duskell
 //http://fizal.me/pokeapi/api/355.json
 
-let div = document.querySelector(".mainContainer");
+//let div = document.querySelector(".mainContainer");
 
 
 
@@ -28,9 +28,11 @@ class Trainer {
         this.trainerArray = []; //stores pokedex for the trainer
         //this.pokemanCollection = [];
     }
+    //adds pokemon
     addPokemon(pk) {
         this.trainerArray.push(pk);
     }
+    //returns trainer stats
     trainerStats() {
         return `
             ${this.trainername}
@@ -125,16 +127,7 @@ class Pokeman {
 
 
 
-////**********************TODO */
-//create web page
-//create theme JS web page for type of each pokemon
-//test and finish classes
-//pull one trainer pokeman, pull all my trainer pokeman
-//build my seach in the webpage to display the pokemon
-//animation for my ideas
-//behavioral JS such as buttons, hover, clicks
-//try to get the sprites on the webAPI axios pull to the webpage in cards
-
+//for internal testing
 let obj = {};
 
 
@@ -262,18 +255,11 @@ function getThePokemans(trainername, response) {
                                                     Power: ${bong.power}\u00A0\u00A0
                                                     Priority: ${bong.priority}`);
 
-                            // return 
-                            //     `Moves${i}: ${makingMoves[randMoves].move.name}
-                            //      Accruacy: ${bong.accuracy}
-                            //      Power: ${bong.power}
-                            //      Priority: ${bong.priority}`;
-
-
                         }).catch(function (response) {
                             console.error(response);
                         })
                 }
-                return obj.moves = move;
+                return obj.moves = move;//for testing purpoese
 
             }
 
@@ -318,32 +304,16 @@ function getThePokemans(trainername, response) {
             </div>
                 
             </div>
-            </div>
-            `
-            // <h3>Making Moves with Accuracy, Power and Priority</h3>
-            // for(let i = 0; i < this.trainerArray[0].moves.length; i++) {
-            //         divCardMoves.innerHTML=
-            //         `
-            //          <p>${this.trainerArray[0].moves[0]}</p>
-            //          <p>${this.trainerArray[0].moves[1]}</p>
-            //          <p>${this.trainerArray[0].moves[2]}</p>
-            //          <p>${this.trainerArray[0].moves[3]}</p>`
-            // }
-            // divInfo.innerHTML = `
-            // <span class="white-text">Pokémon</span>
-            // <p class="white-text">  ${getName()} Type: ${getType()} Held Item: ${getItem()}</p>
-            // <img class="sizeImag1" src="${bing.sprites.front_shiny}" alt="Pokemon" width="100">
-            // <p>HP: ${bing.stats[5].base_stat}   Attack: ${bing.stats[4].base_stat}   Defense: ${bing.stats[3].base_stat}
-            //   Ability: ${getAbility()}</p>
-            // <p>Special Attack: ${bing.stats[2].base_stat} Special Defense: ${bing.stats[1].base_stat} </p>
-
-            // </div>`;
+            </div> `
+            
+            
             divcardSearch.appendChild(divInfo);
             
             console.log( trainername);//name does get passed and printed to console.
             //nameOfTrainer.addPokemon(nameofPOke);
-            trainername.addPokemon(nameofPOke);
-            
+            pokeThis = new Trainer(trainername.trainername,trainername.height,trainername.weight,trainername.gender,trainername.hp,trainername.type)
+            pokeThis.addPokemon(nameofPOke);
+
         }).catch(function (response) {
             console.error(response);
         })
@@ -888,20 +858,16 @@ function gettheType(){
     return getT;   
 }
 
-
-
-
 function gettheName(){
     let getTrainName = document.getElementById('inputTrainerName').value;
     getTrainName = new Trainer(getTrainName,gettheHeight(),gettheWeight(),gettheGender(),gettheHp(),gettheType());
     return getTrainName;
 }
 
-
-
-
 document.getElementById("getsIt").addEventListener("click", searchThem);
 function searchThem(){
    getThePokemans(gettheName(), gettheID());   
    
 }
+
+//getTrainName = new Trainer(getTrainName,gettheHeight(),gettheWeight(),gettheGender(),gettheHp(),gettheType());
