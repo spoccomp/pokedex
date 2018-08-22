@@ -147,7 +147,7 @@ function getThePokemans(trainername, response) {
                 obj.id = bing.id;
                 return bing.id;
             }
-            let nameofPOke = bing.name;
+            
             function getName() {
                 console.log(bing.name);
                 obj.name = bing.name;
@@ -274,6 +274,7 @@ function getThePokemans(trainername, response) {
             // image) 
 
             //let nameOfTrainer = trainername;
+            let nameofPOke = bing.name;
 
             nameofPOke = new Pokeman(getId(),
                 getName(), getType(), getItem(),
@@ -311,8 +312,10 @@ function getThePokemans(trainername, response) {
             
             console.log( trainername);//name does get passed and printed to console.
             //nameOfTrainer.addPokemon(nameofPOke);
-            pokeThis = new Trainer(trainername.trainername,trainername.height,trainername.weight,trainername.gender,trainername.hp,trainername.type)
-            pokeThis.addPokemon(nameofPOke);
+            
+            trainer = new Trainer(trainername.trainername,trainername.height,trainername.weight,trainername.gender,trainername.hp,trainername.type)
+            trainer.addPokemon(nameofPOke);
+            
 
         }).catch(function (response) {
             console.error(response);
