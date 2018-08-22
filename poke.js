@@ -839,11 +839,7 @@ function functionThisToo() {
 
 
 
-function gettheName(){
-    let getTrainName = document.getElementById('inputTrainerName').value;
-    
-    return getTrainName;
-}
+
 function gettheID(){
     let getPokID = document.getElementById('inputNumber').value;
     let numId = parseInt(getPokID);
@@ -854,19 +850,36 @@ function gettheHeight(){
     let numH = parseInt(getH);
     return numH;
 }
+function gettheWeight(){
+    let getW = document.getElementById('inputweight').value;
+    let numW = parseInt(getW);
+    return numW;
+}
+function gettheGender(){
+    let getG = document.getElementById('inputgender').value;
+    return getG;   
+}
+function gettheHp(){
+    let getHp= document.getElementById('inputhp').value;
+    let numHp = parseInt(getHp);
+    return numHp;
+}
+function gettheType(){
+    let getT = document.getElementById('inputtype').value;
+    return getT;   
+}
 
 
-// function getinfor(){
-//     //alert(gname, gnumb);
-//     console.log(gettheName(),gettheID());
-    
-// }
-let hadenough = gettheName();
-    hadenough = new Trainer(hadenough);
+function gettheName(){
+    let getTrainName = document.getElementById('inputTrainerName').value;
+    getTrainName = new Trainer(getTrainName,gettheHeight(),gettheWeight(),gettheGender(),gettheHp(),gettheType());
+    return getTrainName;
+}
+
+
+
+
 document.getElementById("getsIt").addEventListener("click", searchThem);
 function searchThem(){
-    // let hadenough = gettheName();
-    // hadenough = new Trainer();
-   getThePokemans(gettheName(), gettheID());
-   
+   getThePokemans(gettheName(), gettheID());   
 }
