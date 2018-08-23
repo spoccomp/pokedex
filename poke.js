@@ -5,7 +5,7 @@
 //Duskell
 //http://fizal.me/pokeapi/api/355.json
 
-//let div = document.querySelector(".mainContainer");
+
 
 
 
@@ -18,15 +18,8 @@ class Trainer {
         this.gender = gender;
         this.hp = hp;
         this.type = type;
-        // this.attack = attack;
-        // this.defense = defense;
-        // this.specialAttack = specialAttack;
-        // this.specialDefense = specialDefense;
-        // this.ability1 = ability1;
-        // this.ability2 = ability2;
-        //this.pokeman = pokeman;
         this.trainerArray = []; //stores pokedex for the trainer
-        //this.pokemanCollection = [];
+        
     }
     //adds pokemon
     addPokemon(pk) {
@@ -77,19 +70,6 @@ class Trainer {
             </div>
             </div>
             `
-
-            // let divCardMoves = document.getElementById("movesbaby");
-            // //divCardMoves.setAttribute("id", "movesList");
-            //     //for(let i = 0; i < this.trainerArray[0].moves.length; i++) {
-            //         divCardMoves.innerHTML=
-            //         `<h3>Making Moves with Accuracy, Power and Priority</h3>
-            //          <p>${this.trainerArray[0].moves[0]}</p>
-            //          <p>${this.trainerArray[0].moves[1]}</p>
-            //          <p>${this.trainerArray[0].moves[2]}</p>
-            //          <p>${this.trainerArray[0].moves[3]}</p>`
-
-
-            //}
             div.appendChild(divCard);
 
         });
@@ -142,6 +122,7 @@ function getThePokemans(trainername, response) {
             let bing = res.data;
             // console.log(bing);
 
+            // I used return console log and pushed data to my to obj for testing. I used functions and some variables for data.
             function getId() {
                 console.log(`ID: ${bing.id}`);
                 obj.id = bing.id;
@@ -203,20 +184,9 @@ function getThePokemans(trainername, response) {
                     console.log(`${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `);
 
 
-                    //return `${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `;
+                    
                 }
-                // obj.speed = `${bing.stats[0].stat.name}: ${bing.stats[0].base_stat} `;
-                // let speed = `${bing.stats[0].stat.name}: ${bing.stats[0].base_stat} `;
-                // obj.hp = `${bing.stats[5].base_stat}`;
-                // let hp = `${bing.stats[5].base_stat}`;
-                // obj.specialDefense = `${bing.stats[1].stat.name}: ${bing.stats[1].base_stat} `;
-                // let specialDefense = `${bing.stats[1].stat.name}: ${bing.stats[1].base_stat} `;
-                // obj.specialAttack = `${bing.stats[2].stat.name}: ${bing.stats[2].base_stat} `;
-                // let specialAttack = `${bing.stats[2].stat.name}: ${bing.stats[2].base_stat} `;
-                // obj.defense = `${bing.stats[3].stat.name}: ${bing.stats[3].base_stat} `;
-                // let defense = `${bing.stats[3].stat.name}: ${bing.stats[3].base_stat} `;
-                // obj.attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
-                // let attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
+               
 
             }
                 obj.speed = `${bing.stats[0].stat.name}: ${bing.stats[0].base_stat} `;
@@ -231,9 +201,8 @@ function getThePokemans(trainername, response) {
                 let defense = `${bing.stats[3].stat.name}: ${bing.stats[3].base_stat} `;
                 obj.attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
                 let attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
+            
             //four moves only. Call new axios for moves and accruacy, power and priority
-
-
             function getMoves() {
                 makingMoves = bing.moves;
                 let move = [];
@@ -268,12 +237,14 @@ function getThePokemans(trainername, response) {
                 obj.image = `${bing.sprites.front_shiny}`
                 return bing.sprites.front_shiny;
             }
+
+            //below is constructor information
             // id, name, type, item, ability,
             // height, weight, speed, attack, hp, defense,
             // specialAttack, specialDefense, moves,
             // image) 
 
-            //let nameOfTrainer = trainername;
+            
             let nameofPOke = bing.name;
 
             nameofPOke = new Pokeman(getId(),
@@ -311,7 +282,7 @@ function getThePokemans(trainername, response) {
             divcardSearch.appendChild(divInfo);
             
             console.log( trainername);//name does get passed and printed to console.
-            //nameOfTrainer.addPokemon(nameofPOke);
+            
             
             trainer = new Trainer(trainername.trainername,trainername.height,trainername.weight,trainername.gender,trainername.hp,trainername.type)
             trainer.addPokemon(nameofPOke);
@@ -330,7 +301,7 @@ axios.get(`http://fizal.me/pokeapi/api/59.json`)
     .then(function (res) {
         let bing = res.data;
         // console.log(bing);
-
+        // I used return console log and pushed data to my to obj for testing. I used functions and some variables for data.
         function getId() {
             console.log(`ID: ${bing.id}`);
             obj.id = bing.id;
@@ -392,7 +363,7 @@ axios.get(`http://fizal.me/pokeapi/api/59.json`)
                 console.log(`${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `);
 
 
-                //return `${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `;
+                
             }
             obj.speed = `${bing.stats[0].stat.name}: ${bing.stats[0].base_stat} `;
             obj.hp = `${bing.stats[5].base_stat}`;
@@ -402,9 +373,8 @@ axios.get(`http://fizal.me/pokeapi/api/59.json`)
             obj.attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
 
         }
+
         //four moves only. Call new axios for moves and accruacy, power and priority
-
-
         function getMoves() {
             makingMoves = bing.moves;
             let move = [];
@@ -425,13 +395,6 @@ axios.get(`http://fizal.me/pokeapi/api/59.json`)
                                                  Accuracy: ${bong.accuracy}\u00A0\u00A0
                                                  Power: ${bong.power}\u00A0\u00A0
                                                  Priority: ${bong.priority}`);
-
-                        // return 
-                        //     `Moves${i}: ${makingMoves[randMoves].move.name}
-                        //      Accruacy: ${bong.accuracy}
-                        //      Power: ${bong.power}
-                        //      Priority: ${bong.priority}`;
-
 
                     }).catch(function (response) {
                         console.error(response);
@@ -486,8 +449,10 @@ axios.get(`http://fizal.me/pokeapi/api/59.json`)
 axios.get(`http://fizal.me/pokeapi/api/82.json`)
     .then(function (res) {
         let bing = res.data;
+       
         // console.log(bing);
-
+        // I used return console log and pushed data to my to obj for testing. I used functions and some variables for data.
+       
         function getId() {
             console.log(`ID: ${bing.id}`);
             obj.id = bing.id;
@@ -549,7 +514,7 @@ axios.get(`http://fizal.me/pokeapi/api/82.json`)
                 console.log(`${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `);
 
 
-                //return `${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `;
+                
             }
             obj.speed = `${bing.stats[0].stat.name}: ${bing.stats[0].base_stat} `;
             obj.hp = `${bing.stats[5].base_stat}`;
@@ -559,7 +524,7 @@ axios.get(`http://fizal.me/pokeapi/api/82.json`)
             obj.attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
 
         }
-        //four moves only. Call new axios for moves and accruacy, power and priority
+        
 
 
         function getMoves() {
@@ -635,6 +600,7 @@ axios.get(`http://fizal.me/pokeapi/api/355.json`)
     .then(function (res) {
         let bing = res.data;
         // console.log(bing);
+        // I used return console log and pushed data to my to obj for testing. I used functions and some variables for data.
 
         function getId() {
             console.log(`ID: ${bing.id}`);
@@ -697,7 +663,7 @@ axios.get(`http://fizal.me/pokeapi/api/355.json`)
                 console.log(`${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `);
 
 
-                //return `${bing.stats[k].stat.name}: ${bing.stats[k].base_stat} `;
+                
             }
             obj.speed = `${bing.stats[0].stat.name}: ${bing.stats[0].base_stat} `;
             obj.hp = `${bing.stats[5].base_stat}`;
@@ -707,9 +673,8 @@ axios.get(`http://fizal.me/pokeapi/api/355.json`)
             obj.attack = `${bing.stats[4].stat.name}: ${bing.stats[4].base_stat} `;
 
         }
+
         //four moves only. Call new axios for moves and accruacy, power and priority
-
-
         function getMoves() {
             makingMoves = bing.moves;
             let move = [];
@@ -781,17 +746,13 @@ axios.get(`http://fizal.me/pokeapi/api/355.json`)
     }).catch(function (response) {
         console.error(response);
     })
-// rich.addPokemon(arcanine);
-// rich.addPokemon(magneton);
-// rich.addPokemon(duskell);
 
+//instansiates my trainer for me
 let rich = new Trainer();
-//This is for all pokemon search needs to be worked on
-// let answer = prompt("Catch a pokemon, pick a number between 1 and 807:  ");
-// let nameAns = prompt("Give you Pokemon a name: ");
 
 
 
+//for buttons to return home
 let goHome = document.querySelector("#goHome");
 goHome.addEventListener("click", functionThis);
 
@@ -817,9 +778,6 @@ document.getElementById("myBtn").addEventListener("click", displayPokeList);
 
 function displayPokeList() {
     rich.getAllPokemon();
-    // document.getElementById("demo")
-    //     .innerHTML = `${newJoke}`;
-
 }
 let go2Home = document.querySelector("#broo");
 go2Home.addEventListener("click", functionThisToo);

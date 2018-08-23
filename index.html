@@ -15,6 +15,7 @@
 
 <body>
     <div class="mainContainer"></div>
+    <!-- banner - nav bar -->
     <div class="row">
         <div class="row">
             <div class="col s12 blue-grey lighten-4">
@@ -31,6 +32,7 @@
                 </div>
             </div>
         </div>
+        <!-- nav bar -->
         <div class="row">
             <nav>
                 <div class="nav-wrapper teal">
@@ -42,9 +44,9 @@
                             <a href="#container">Pokédex</a>
                         </li>
                         <li>
-                            <!-- <button id="myBtn"></button> -->
-                                <a id="myBtn" href="#myList1">Pokémon Trainer</a>
-                            
+
+                            <a id="myBtn" href="#myList1">Pokémon Trainer</a>
+
                         </li>
                         <li>
                             <a href="#newTrainerAddPokemon">Pokémon Search</a>
@@ -53,6 +55,7 @@
                 </div>
             </nav>
         </div>
+        <!-- my image, pedigree info for me, godzilla image -->
         <div class="row">
             <div class="col s2 myheader">
                 <img class="myImageSize z-depth-5" src="/Users/macuser/Documents/NYCode+DesignAcademy/projects/personalPokedex/imagestuff/student_name_profile.jpg">
@@ -76,6 +79,7 @@
             </div>
         </div>
     </div>
+    <!-- images, animation -->
     <div class="row col m7 right blink">
         <p class="namepoke1">"Gotta Catch 'Em All"</p>
     </div>
@@ -99,26 +103,28 @@
         </div>
     </div>
 
-
-    <div id="container"><br><br>
+    <!-- API pokemon 3 cards -->
+    <div id="container">
+        <br>
+        <br>
         <div class="row center">
             <div class="col s4 center ">
                 <div id="divcd1" class="card medium teal ">
 
-
+                    <!-- js writes -->
                 </div>
             </div>
 
             <div class="col s4  center ">
                 <div id="divcd2" class="card medium teal ">
 
-
+                    <!-- js writes -->
                 </div>
             </div>
             <div class="col s4 center ">
                 <div id="divcd3" class="card medium teal ">
 
-
+                    <!-- js writes -->
                 </div>
             </div>
 
@@ -126,8 +132,14 @@
         </div>
     </div>
     </div>
-    <br><br><br><br>
-    <section class="about" id="about"><br><br>
+    <!-- about  -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="about" id="about">
+        <br>
+        <br>
         <span class="teal-text namepoke1 center">
             <h2>Pokémon</h2>
         </span>
@@ -146,9 +158,15 @@
             </h4>
             <a class="waves-effect waves-light btn-large " id="goHome">Home</a>
         </div>
-    </section><br><br><br><br><br><br>
-    
-    <!-- More detailed list of my pokemans -->
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- More detailed list of my pokemans from classes-->
 
     <section>
         <div id="myList1"></div>
@@ -158,41 +176,50 @@
                 <br>
             </button>
         </div>
-    </section><br><br><br>
+    </section>
+    <br>
+    <br>
+    <br>
+    <!-- search for and create trainer -->
     <section id="newTrainerAddPokemon">
         <h3 class="center teal-text">Hello future trainer!</h3>
         <div class="wrapper center">
-        <form id="searchBaby">
-            <label id="nameLable" for="inputTrainerName">trainer name:</label>
+            <form id="searchBaby">
+                <label id="nameLable" for="inputTrainerName">trainer name:</label>
                 <input id="inputTrainerName" type="text" maxlength="15">
-            <label id="numLable" for="inputNumber">Search Pokemon, pick a number between 1 and 807:</label>
+                <label id="numLable" for="inputNumber">Search Pokemon, pick a number between 1 and 807:</label>
                 <input id="inputNumber" type="number" maxlength="3">
-            <label id="heightLable" for="inputheight">height:</label>
+                <label id="heightLable" for="inputheight">height:</label>
                 <input id="inputheight" type="number" maxlength="3">
-            <label id="weightLable" for="inputweight">weight:</label>
+                <label id="weightLable" for="inputweight">weight:</label>
                 <input id="inputweight" type="number" maxlength="3">
-            <label id="genderLable" for="inputgender">gender:</label>
+                <label id="genderLable" for="inputgender">gender:</label>
                 <input id="inputgender" type="text" maxlength="5">
-            <label id="hplabel" for="inputhp">hp:</label>
+                <label id="hplabel" for="inputhp">hp:</label>
                 <input id="inputhp" type="number" maxlength="3">
-            <label id="typelabel" for="inputtype">type:</label>
+                <label id="typelabel" for="inputtype">type:</label>
                 <input id="inputtype" type="text" maxlength="8">
                 <!-- <button onclick="getinfor()">GetInfor</button> -->
                 <input id="getsIt" type="button" value="Search">
-            <div id="getSearchPoke"></div>
-        </form>
-        <br><br>
-        <a class="waves-effect waves-light btn-large " id="goHome1">Home</a>
+                <div id="getSearchPoke"></div>
+            </form>
+            <br>
+            <br>
+            <a class="waves-effect waves-light btn-large " id="goHome1">Home</a>
         </div>
+
         <footer>
-            <br><br><br>
+            <br>
+            <br>
+            <br>
             <img class="imageLogo" alt="Pokémon logo" src="/Users/macuser/Documents/NYCode+DesignAcademy/projects/personalPokedex/imagestuff/International_Pokémon_logo.svg.png">
             <p class="center teal white-text">Thank you for looking at my website!</p>
         </footer>
     </section>
+    <!-- scripts -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script src=pokeData.js></script>
+    <!-- <script src=pokeData.js></script> -->
     <script src=poke.js></script>
 </body>
 
