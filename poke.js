@@ -36,7 +36,17 @@ class Trainer {
             ${this.hp}
         `;
     }
-
+    getArray(){
+        return this.trainerArray;
+    }
+    gettrainer(){
+        return (this.trainername,
+                this.trainerArray.forEach(element =>{
+                    console.log(element)
+                }))
+                
+    }
+    //Requiement returns an array of data
     //get all Pokemon and render to screen on cards
     getAllPokemon() {
 
@@ -409,10 +419,7 @@ axios.get(`https://fizal.me/pokeapi/api/59.json`)
             obj.image = `${bing.sprites.front_shiny}`
             return bing.sprites.front_shiny;
         }
-        // id, name, type, item, ability,
-        // height, weight, speed, attack, hp, defense,
-        // specialAttack, specialDefense, moves,
-        // image) 
+    
         arcanine = new Pokeman(getId(),
             getName(), getType(), getItem(),
             getAbility(), getHeight(), getWeight(),
@@ -747,9 +754,6 @@ axios.get(`https://fizal.me/pokeapi/api/355.json`)
         console.error(response);
     })
 
-//instansiates my trainer for me
-let rich = new Trainer();
-
 
 
 //for buttons to return home
@@ -788,8 +792,14 @@ function functionThisToo() {
 }
 
 
+//instansiates my trainer for me
+let rich = new Trainer();
+rich.getArray()
+rich.getAllPokemon()
+
 
 //below gets data to build a new trainer and pokemans collections
+// Requiement to meet a such is met below for any pokemon
 function gettheID(){
     let getPokID = document.getElementById('inputNumber').value;
     let numId = parseInt(getPokID);
@@ -830,5 +840,3 @@ function searchThem(){
    getThePokemans(gettheName(), gettheID());   
    
 }
-
-//getTrainName = new Trainer(getTrainName,gettheHeight(),gettheWeight(),gettheGender(),gettheHp(),gettheType());
