@@ -39,7 +39,11 @@ class Trainer {
     getArray(){
         return this.trainerArray;
     }
-    gettrainer(){
+    get name(){
+        return this.trainername
+    }
+
+    gettrainer(){//returns all pokemons for that specific trainer
         return (this.trainername,
                 this.trainerArray.forEach(element =>{
                     console.log(element)
