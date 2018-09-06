@@ -131,7 +131,7 @@ let obj = {};
 //this is to get any pokemon and display it on a card//
 
 function getThePokemans(trainername, response) {
-    axios.get(`http://fizal.me/pokeapi/api/${response}.json`)
+    axios.get(`https://fizal.me/pokeapi/api/${response}.json`)
         .then(function (res) {
             let bing = res.data;
             // console.log(bing);
@@ -311,7 +311,7 @@ function getThePokemans(trainername, response) {
 
 
 //Arcanine
-axios.get(`http://fizal.me/pokeapi/api/59.json`)
+axios.get(`https://fizal.me/pokeapi/api/59.json`)
     .then(function (res) {
         let bing = res.data;
         // console.log(bing);
@@ -457,7 +457,7 @@ axios.get(`http://fizal.me/pokeapi/api/59.json`)
 
 
 //Magneton
-axios.get(`http://fizal.me/pokeapi/api/82.json`)
+axios.get(`https://fizal.me/pokeapi/api/82.json`)
     .then(function (res) {
         let bing = res.data;
        
@@ -607,7 +607,7 @@ axios.get(`http://fizal.me/pokeapi/api/82.json`)
     })
 
 //Duskell
-axios.get(`http://fizal.me/pokeapi/api/355.json`)
+axios.get(`https://fizal.me/pokeapi/api/355.json`)
     .then(function (res) {
         let bing = res.data;
         // console.log(bing);
